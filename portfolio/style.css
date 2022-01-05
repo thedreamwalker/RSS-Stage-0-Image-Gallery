@@ -1,7 +1,7 @@
 :root {
   --background-basic-color: rgb(0, 0, 0);
   --text-basic-color: rgb(255, 255, 255);
-  --decorate-hover-color: rgb(189, 174, 130);
+  --decorate-hover-color: rgb(190, 175, 131);
 }
 
 * {
@@ -132,7 +132,7 @@ body {
 
 .button {
   width: 220px;
-  padding: 6px 10px;
+  padding: 6px 10px 5px;
   font-family: inherit;
   font-style: normal;
   font-weight: normal;
@@ -226,22 +226,22 @@ body {
 
 .skills-item:nth-child(4n+1)::before {
   width: 62px;
-  background-image: url(./assets/svg/camera\ 1.svg);
+  background-image: url(./assets/svg/camera.svg);
 }
 
 .skills-item:nth-child(4n+2)::before {
   width: 60px;
-  background-image: url(./assets/svg/video\ 1.svg);
+  background-image: url(./assets/svg/video.svg);
 }
 
 .skills-item:nth-child(4n+3)::before {
   width: 66px;
-  background-image: url(./assets/svg/image\ 1.svg);
+  background-image: url(./assets/svg/image.svg);
 }
 
 .skills-item:nth-child(4n+4)::before {
   width: 32px;
-  background-image: url(./assets/svg/mic\ 1.svg);
+  background-image: url(./assets/svg/mic.svg);
 }
 
 .skills-item h3 {
@@ -270,4 +270,69 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
+}
+
+.video {
+  margin-bottom: 100px;
+}
+
+.video-player {
+  display: flex;
+  position: relative;
+}
+
+.video-player::before {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background-image: url(./assets/svg/Play_hover.svg);
+}
+
+.video-player:hover::before {
+  filter: invert(22%) sepia(22%) saturate(458%) hue-rotate(7deg) brightness(87%) contrast(89%);
+}
+
+.price-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+  list-style: none;
+}
+
+.price-item {
+  min-width: 450px;
+  padding: 43px 43px 40px;
+  border: 2px solid var(--decorate-hover-color);
+}
+
+.price h3 {
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 56px;
+  margin-bottom: 20px;
+}
+
+.price-item span {
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 48px;
+  color: var(--decorate-hover-color);
+}
+
+.price p {
+  font-size: 18px;
+  line-height: 36px;
+}
+
+.price-item-disclaimer {
+  margin: 20px 0 40px;
 }
