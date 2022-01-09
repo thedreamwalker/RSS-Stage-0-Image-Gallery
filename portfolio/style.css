@@ -5,6 +5,10 @@
   --background-input-color: rgb(0, 0, 0, 0.5);
 }
 
+html {
+  scroll-behavior: smooth; 
+}
+
 * {
   box-sizing: border-box;
 }
@@ -100,8 +104,21 @@ body {
   padding: 0 5px;
 }
 
-.switcher-languages span:first-child {
+.switcher {
+  transition: all .4s;
+  cursor: pointer;
+}
+
+.switcher:hover {
   color: var(--decorate-hover-color);
+}
+
+.switcher-languages .active {
+  color: var(--decorate-hover-color);
+}
+
+.switcher-languages .active:hover {
+  color: var(--text-basic-color);
 }
 
 .hero {
@@ -139,6 +156,7 @@ body {
   text-align: center;
   border: 2px solid var(--decorate-hover-color);
   cursor: pointer;
+  transition: all .4s;
 }
 
 .button-light {
@@ -146,9 +164,17 @@ body {
   background-color: var(--decorate-hover-color);
 }
 
+.button-light:hover {
+  color: var(--text-basic-color);
+}
+
 .button-dark {
   color: var(--decorate-hover-color);
   background-color: transparent;
+}
+
+.button-dark:hover {
+  color: var(--text-basic-color);
 }
 
 .section-title-line {
@@ -267,6 +293,15 @@ body {
   margin-bottom: 60px;
 }
 
+.portfolio .buttons .active {
+  color: var(--background-basic-color);
+  background-color: var(--decorate-hover-color);
+}
+
+.portfolio .buttons .active:hover {
+  color: var(--text-basic-color);
+}
+
 .photos {
   display: flex;
   flex-wrap: wrap;
@@ -282,7 +317,21 @@ body {
   position: relative;
 }
 
-.video-player::before {
+.video-button {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.video-button::before {
   content: "";
   position: absolute;
   width: 130px;
@@ -295,7 +344,7 @@ body {
   background-image: url(./assets/svg/Play_hover.svg);
 }
 
-.video-player:hover::before {
+.video-button:hover::before {
   filter: invert(22%) sepia(22%) saturate(458%) hue-rotate(7deg) brightness(87%) contrast(89%);
 }
 
@@ -424,7 +473,7 @@ body {
   width: 32px;
   height: 32px;
   top: 0;
-  left 0;
+  left: 0;
 }
 
 .link-instagram::before {
@@ -445,4 +494,14 @@ body {
 
 .social-link-item:hover::before {
   filter: invert(22%) sepia(22%) saturate(458%) hue-rotate(7deg) brightness(87%) contrast(89%);
+}
+
+.footer a {
+  color: var(--text-basic-color);
+  text-decoration: none;
+  transition: all .4s;
+}
+
+.footer a:hover {
+  color: var(--decorate-hover-color);
 }
