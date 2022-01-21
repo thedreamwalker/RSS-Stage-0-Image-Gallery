@@ -42,7 +42,7 @@ body {
 }
 
 .container {
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -74,6 +74,7 @@ body {
 
 .nav-list {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
 }
 
@@ -223,6 +224,7 @@ body {
 
 .skills-list {
   display: flex;
+  justify-content: space-between;
   list-style: none;
   text-align: center;
   flex-wrap: wrap;
@@ -232,12 +234,7 @@ body {
   position: relative;
   max-width: 320px;
   margin-bottom: 101px;
-  margin-right: 40px;
   padding: 100px 20px 8px 20px;
-}
-
-.skills-item:nth-child(4n) {
-  margin-right: 0;
 }
 
 .skills-item::before {
@@ -290,6 +287,10 @@ body {
 }
 
 .portfolio .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
   margin-bottom: 60px;
 }
 
@@ -304,6 +305,7 @@ body {
 
 .photos {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 25px;
 }
@@ -313,8 +315,15 @@ body {
 }
 
 .video-player {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   position: relative;
+}
+
+.video-player img {
+  width: 100%;
 }
 
 .video-button {
@@ -329,6 +338,7 @@ body {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  
 }
 
 .video-button::before {
@@ -342,6 +352,7 @@ body {
   right: 0;
   margin: auto;
   background-image: url(./assets/svg/Play_hover.svg);
+  transition: all .4s;
 }
 
 .video-button:hover::before {
@@ -354,7 +365,8 @@ body {
 
 .price-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 25px;
   flex-wrap: wrap;
   text-align: center;
   list-style: none;
@@ -505,3 +517,149 @@ body {
 .footer a:hover {
   color: var(--decorate-hover-color);
 }
+
+@media (max-width: 768px) {
+
+  .header .container {
+    background-image: url('./assets/img/bg.jpg');
+    background-position: -5px -30px;
+    background-repeat: no-repeat;
+    background-size: auto 620px;
+  }
+
+  .hero {
+    min-height: 500px;
+    padding: 78px 60px 60px 60px;
+    background-position: -5px -120px;
+    background-size: auto 620px;
+  }
+
+  .hero h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    line-height: 64px;
+    font-weight: 400;
+  }
+
+  .hero p {
+    max-width: 390px;
+    margin-bottom: 60px;
+    line-height: 24px;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 65px;
+  }
+
+  .skills {
+    margin-bottom: 105px;
+  }
+
+  .skills-list {
+    padding: 0 42px;
+  }
+
+  .skills-item {
+    max-width: 300px;
+    margin-bottom: 68px;
+    padding: 80px 10px 8px 10px;
+  }
+
+  .skills-item p {
+    line-height: 22px;
+  }
+
+  .portfolio .section-title {
+    margin-bottom: 69px;
+  }
+
+  .portfolio .buttons {
+    padding: 0 50px;
+  }
+
+  .video .section-title {
+    margin-bottom: 71px;
+  }
+
+  .video-player {
+    justify-content: center;
+    height: 418px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .video-player img {
+    position: relative;
+    width: 106%;
+    left: 23px;
+  }
+  .video-button::before {
+    width: 65px;
+    height: 65px;
+  }
+
+  .price {
+    margin-bottom: 80px;
+  }
+
+  .price .section-title {
+    margin-bottom: 69px;
+  }
+
+  .price-list {
+    gap: 50px;
+  }
+
+  .price-item {
+    min-width: 420px;
+    padding: 42px 43px 40px;
+    ;
+}
+
+  .contacts {
+    min-height: 600px;
+    justify-content: center;
+    text-align: center;
+    background-size: auto 600px;
+  }
+
+  .contacts .section-title {
+    padding-top: 12px;
+    margin: 0 0 52px 0;
+    text-align: center;
+}
+
+}
+
+@media (max-width: 767px) {
+  .video-player {
+    justify-content: center;
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .video-player img {
+    position: relative;
+    width: 100%;
+    left: 0;
+  }
+}
+
+@media (max-width: 740px) {
+  .skills-list {
+    justify-content: center;
+  }
+}
+
+
+
+@media (max-width: 500px) {
+  .photos img {
+    width: 100%;
+  }
+}
+
+
