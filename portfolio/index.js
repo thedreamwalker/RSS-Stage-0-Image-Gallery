@@ -36,3 +36,36 @@ console.log(`Оценка: 110 из 100\n
 - ссылки в футере ведут на гитхаб автора проекта и на страницу курса https://rs.school/js-stage0/ +5 (ссылки по словам github и названию школы добавлены) \n
 - интерактивность включает в себя не только изменение внешнего вида курсора, например, при помощи свойства cursor: pointer, но и другие визуальные эффекты, например, изменение цвета фона или цвета шрифта. Если в макете указаны стили при наведении и клике, для элемента указываем эти стили. Если в макете стили не указаны, реализуете их по своему усмотрению, руководствуясь общим стилем макета +5 (изменения при наведении и курсор добавлены)\n
 - обязательное требование к интерактивности: плавное изменение внешнего вида элемента при наведении и клике не влияющее на соседние элементы +5 (выполнено)`);
+
+const hamburger = document.querySelector('.hamburger');
+const menu = document.querySelector('.nav-list');
+const menuLinks = document.querySelectorAll('.nav-item');
+
+const openMenu = () => {
+  menu.classList.toggle('is-active');
+  hamburger.classList.toggle('is-active');
+}
+
+/*
+const closeMenu = (event) => {
+    menu.classList.remove('is-active');
+    hamburger.classList.remove('is-active');
+}
+
+menuLinks.forEach((el) => el.addEventListener('click', closeMenu));
+
+*/
+
+
+const closeMenu = (event) => {
+  if (event.target && event.target.closest('.nav-item a')) {
+    menu.classList.remove('is-active');
+    hamburger.classList.remove('is-active');
+  }
+}
+
+
+hamburger.addEventListener('click', openMenu);
+menu.addEventListener('click', closeMenu);
+
+
