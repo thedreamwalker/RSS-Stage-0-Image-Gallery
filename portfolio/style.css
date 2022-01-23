@@ -608,7 +608,7 @@ body {
     flex-direction: column;
     flex-wrap: nowrap;
     position: fixed;
-    right: -100%;
+    right: -620px;
     top: 0;
     width: 620px;
     height: 100%;
@@ -754,6 +754,31 @@ body {
     text-align: center;
 }
 
+.footer .container {
+  flex-direction: column;
+  align-items: center;
+  min-height: 190px;
+  padding: 20px 20px 35px;
+}
+
+.footer .container .copyright {
+  margin-right: 0;
+  padding-right: 7px;
+}
+
+.school-link {
+  padding-bottom: 15px;
+}
+
+.social-link-list {
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-link-item {
+  margin: 0;
+}
+
 }
 
 @media (max-width: 767px) {
@@ -777,12 +802,21 @@ body {
   }
 }
 
-
+@media (max-width: 619px) {
+  .nav-list {
+    width: 100%;
+  }
+}
 
 @media (max-width: 500px) {
   .photos img {
     width: 100%;
   }
+
+  .price-item {
+    min-width: 0;
+    padding: 42px 43px 40px;
+}
 }
 
 
