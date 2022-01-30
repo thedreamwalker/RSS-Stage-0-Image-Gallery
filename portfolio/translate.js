@@ -1,8 +1,3 @@
-console.log(`Оценка: 85 из 85\n
-— Вёрстка соответствует макету. Ширина экрана 768px +48 \(выполнено и проверено через pixelperfect\)\n
-— Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется +15 (Прокрутки не появляется и контент остается)\n
-— На ширине экрана 768рх и меньше реализовано адаптивное меню +22 (адаптивное меню реализовано)`);
-
 const i18Obj = {
   'en': {
     'skills': 'Skills',
@@ -42,10 +37,7 @@ const i18Obj = {
     'price-description-3-span-5': 'Make up, visage, hairstyle',
     'order': 'Order shooting',
     'contact-me': 'Contact me',
-    'send-message': 'Send message',
-    'email': 'E-mail',
-    'telephone': 'Phone',
-    'text--message': 'Message'
+    'send-message': 'Send message'
   },
   'ru': {
     'skills': 'Навыки',
@@ -85,94 +77,7 @@ const i18Obj = {
     'price-description-3-span-5': 'Макияж, визаж, прическа',
     'order': 'Заказать съемку',
     'contact-me': 'Свяжитесь со мной',
-    'send-message': 'Отправить',
-    'email': 'Почтовый адрес',
-    'telephone': 'Телефон',
-    'text-message': 'Сообщение'
+    'send-message': 'Отправить'
   }
 }
-
-const hamburger = document.querySelector('.hamburger');
-const menu = document.querySelector('.nav-list');
-const menuLinks = document.querySelectorAll('.nav-item');
-const portfolioBtn = document.querySelector('.portfolio-btn');
-const portfolioImages = document.querySelectorAll('.portfolio-image');
-const portfolioBtns = document.querySelector('.buttons');
-const portfolioBtnAll = document.querySelectorAll('.portfolio-btn');
-
-const openMenu = () => {
-  menu.classList.toggle('is-active');
-  hamburger.classList.toggle('is-active');
-}
-
-/*
-const closeMenu = (event) => {
-    menu.classList.remove('is-active');
-    hamburger.classList.remove('is-active');
-}
-
-menuLinks.forEach((el) => el.addEventListener('click', closeMenu));
-*/
-
-const closeMenu = (event) => {
-  if (event.target && event.target.closest('.nav-item a')) {
-    menu.classList.remove('is-active');
-    hamburger.classList.remove('is-active');
-  }
-}
-
-hamburger.addEventListener('click', openMenu);
-menu.addEventListener('click', closeMenu);
-
-const changeImage = (event) => {
-  if (event.target.classList.contains('portfolio-btn')) {
-
-    // смена active
-    portfolioBtnAll.forEach((btn) => btn.classList.remove('is-active'));
-    event.target.classList.add('is-active');
-
-    // здесь код функции, меняющей src изображений
-    portfolioImages.forEach((img, index) => img.src = `./assets/img/${event.target.dataset.season}/portfolio-img-${index + 1}.jpg`);
-  }
-}
-
-portfolioBtns.addEventListener('click', changeImage);
-
-/*--------------------КЭШИРОВАНИЕ ИЗОБРАЖЕНИЙ В ПОРТФОЛИО -----------------------*/
-
-function preloadImages() {
-  const seasons = ['winter', 'spring', 'summer', 'autumn'];
-  seasons.forEach((season) => {
-    for(let i = 1; i <= 6; i++) {
-      const img = new Image();
-      img.src = `./assets/img/${season}/portfolio-img-${i}.jpg`;
-    }
-  });
-
-}
-preloadImages();
-
-/*--------------------СМЕНА ЯЗЫКА -----------------------*/
-const langRu = document.querySelector('.ru');
-const langEn = document.querySelector('.en');
-
-const getTranslate = (lang) => {
-  const AllData = document.querySelectorAll('[data-i18]');
-  AllData.forEach((el) => {
-    el.textContent = i18Obj[lang][el.dataset.i18]
-    if (el.placeholder) {
-      el.placeholder = el.textContent;
-      el.textContent = '';
-    }})
-};
-
-langRu.addEventListener('click', () => {
-  getTranslate('ru');
-  langEn.classList.remove('is-active');
-  langRu.classList.add('is-active');
-})
-langEn.addEventListener('click', () => {
-  getTranslate('en');
-  langRu.classList.remove('is-active');
-  langEn.classList.add('is-active');
-})
+export default i18Obj;
