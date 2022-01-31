@@ -35,17 +35,24 @@
       <div class="switcher-languages">
         <span class="switcher en is-active">en</span> <span class="slash">/</span> <span class="switcher ru">ru</span>
       </div>
+      <div class="switcher-theme">
+        <span class="theme light-theme is-active"></span>
+      </div>
     </div>
+  </div>
   </header>
 
   <main class="main">
-      <section class="container hero">
-        <h1 data-i18="hero-title">Alexa Rise</h1>
-        <p data-i18="hero-text">Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise</p>
-        <button class="button button-light" data-i18="hire">Hire me</button>
+      <section class="hero">
+        <div class="container">
+          <h1 data-i18="hero-title">Alexa Rise</h1>
+          <p data-i18="hero-text">Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise</p>
+          <button class="button button-light" data-i18="hire">Hire me</button>
+        </div>
       </section>
-      <section class="container skills" id="skills">
-          <h2 class="section-title"><span data-i18="skills">Skills</span></h2>
+      <section class="skills" id="skills">
+        <div class="container">
+          <h2 class="section-title section-title-skills"><span class="section-title-text section-title-text-skills" data-i18="skills">Skills</span></h2>
           <ul class="skills-list">
             <li class="skills-item">
               <h3 data-i18="skill-title-1">Digital photography</h3>
@@ -64,10 +71,11 @@
               <p data-i18="skill-text-4">Professional sounds recording for video, advertising, portfolio</p>
             </li>
           </ul>
-        
+        </div>
       </section>
-      <section class="container portfolio" id="portfolio">
-          <h2 class="section-title"><span data-i18="portfolio">Portfolio</span></h2>
+      <section class="portfolio" id="portfolio">
+        <div class="container">
+          <h2 class="section-title section-title-portfolio"><span class="section-title-text section-title-text-portfolio" data-i18="portfolio">Portfolio</span></h2>
           <div class="buttons">
             <button class="button button-dark portfolio-btn" data-season="winter" data-i18="winter">Winter</button>
             <button class="button button-dark portfolio-btn" data-season="spring" data-i18="spring">Spring</button>
@@ -82,18 +90,20 @@
             <img class="portfolio-image" src="./assets/img/autumn/portfolio-img-5.jpg" alt="Пожилая пара">
             <img class="portfolio-image" src="./assets/img/autumn/portfolio-img-6.jpg" alt="Девушка фотографирует лист">
           </div>
+        </div>
       </section>
       <section class="video" id="video">
         <div class="container">
-          <h2 class="section-title"><span data-i18="video">Video</span></h2>
-        </div>
-        <div class="video-player">
-          <img src="./assets/img/video-player.jpg" alt="Обложка свадебного видео">
-          <button class="video-button"></button>
-        </div>
+          <h2 class="section-title section-title-video"><span class="section-title-text section-title-text-video" data-i18="video">Video</span></h2>
+          <div class="video-player">
+            <img src="./assets/img/video-player.jpg" alt="Обложка свадебного видео">
+            <button class="video-button"></button>
+          </div>
+      </div>
       </section>
-      <section class="container price" id="price">
-          <h2 class="section-title"><span data-i18="price">Price</span></h2>
+      <section class="price" id="price">
+        <div class="container">
+          <h2 class="section-title section-title-price"><span class="section-title-text section-title-text-price" data-i18="price">Price</span></h2>
           <ul class="price-list">
             <li class="price-item">
               <h3>Standard</h3>
@@ -132,24 +142,27 @@
               <button class="button button-light" data-i18="order">Order shooting</button>
             </li>
           </ul>
+        </div>
       </section>
-      <section class="container contacts" id="contacts">
-        <div class="contacts-wrapper">
-          <h2 class="section-title" data-i18="contact-me">Contact me</h2>
-          <form action="#">
-            <p>
-              <input type="email" placeholder="E-mail" data-i18="email">
-            </p>
-            <p>
-              <input type="tel" placeholder="Phone" data-i18="telephone">
-            </p>
-            <p>
-              <textarea placeholder="Message" data-i18="text-message"></textarea>
-            </p>
-            <p>
-              <button class="button button-light" type="submit" data-i18="send-message">Send message</button>
-            </p>
-          </form>
+      <section class="contacts" id="contacts">
+        <div class="container">
+          <div class="contacts-wrapper">
+            <h2 class="section-title" data-i18="contact-me">Contact me</h2>
+            <form action="#">
+              <p>
+                <input type="email" placeholder="E-mail" data-i18="email">
+              </p>
+              <p>
+                <input type="tel" placeholder="Phone" data-i18="telephone">
+              </p>
+              <p>
+                <textarea placeholder="Message" data-i18="text-message"></textarea>
+              </p>
+              <p>
+                <button class="button button-light" type="submit" data-i18="send-message">Send message</button>
+              </p>
+            </form>
+          </div>
         </div>
       </section>
   </main>

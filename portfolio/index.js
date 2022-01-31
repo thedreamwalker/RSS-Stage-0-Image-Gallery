@@ -1,7 +1,8 @@
 console.log(`Оценка: 85 из 85\n
-— Вёрстка соответствует макету. Ширина экрана 768px +48 \(выполнено и проверено через pixelperfect\)\n
-— Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется +15 (Прокрутки не появляется и контент остается)\n
-— На ширине экрана 768рх и меньше реализовано адаптивное меню +22 (адаптивное меню реализовано)`);
+— Смена изображений в секции portfolio +25 \(выполнено\)\n
+— Перевод страницы на два языка +25 (выполнено)\n
+— Переключение светлой и тёмной темы +25 (выполнено)\n
+— Дополнительный функционал +10 минус 2.5 балла: сохраняется в localStorage только язык, тему не успела/не осилила`);
 
 const i18Obj = {
   'en': {
@@ -92,6 +93,9 @@ const i18Obj = {
   }
 }
 
+let lang = 'en';
+let theme = 'dark';
+
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('.nav-list');
 const menuLinks = document.querySelectorAll('.nav-item');
@@ -170,9 +174,59 @@ langRu.addEventListener('click', () => {
   getTranslate('ru');
   langEn.classList.remove('is-active');
   langRu.classList.add('is-active');
+  lang = 'ru';
 })
 langEn.addEventListener('click', () => {
   getTranslate('en');
   langRu.classList.remove('is-active');
   langEn.classList.add('is-active');
+  lang = 'en';
 })
+
+/*---------------СМЕНА ТЕМЫ------------------*/
+const switcherTheme = document.querySelector('.switcher-theme');
+const buttonTheme = document.querySelector('.theme');
+const allTitile = document.querySelectorAll('.section-title-text');
+
+const changetheme = (theme) => {
+  const AllElement = [document.querySelector('.skills'), document.querySelector('.portfolio'), document.querySelector('.video'), document.querySelector('.price'),
+  document.querySelector('.theme'), document.querySelector('.section-title-skills'), document.querySelector('.section-title-portfolio'), document.querySelector('.section-title-video'),
+  document.querySelector('.section-title-price'), document.querySelector('.section-title-text-skills'), document.querySelector('.section-title-text-portfolio'),
+  document.querySelector('.section-title-text-video'), document.querySelector('.section-title-text-price'), document.querySelector('.buttons')];
+
+  if (switcherTheme.querySelector('.light-theme')) {
+    AllElement.forEach((el) => {
+      el.classList.toggle('dark-theme');
+      el.classList.toggle('light-theme');
+      })
+      theme = 'dark';
+  } else if (switcherTheme.querySelector('.dark-theme')) {
+    AllElement.forEach((el) => {
+      el.classList.toggle('dark-theme');
+      el.classList.toggle('light-theme');
+      })
+      theme = 'light';
+  }
+};
+
+buttonTheme.addEventListener('click', changetheme);
+
+/*---------------local storage------------------*/
+function getLocalStorage() {
+  if(localStorage.getItem('lang')) {
+    lang = localStorage.getItem('lang');
+    getTranslate(lang);
+  }
+
+  if(localStorage.getItem('theme')) {
+    theme = localStorage.getItem('theme');
+    //changetheme(theme);
+  }
+}
+window.addEventListener('load', getLocalStorage);
+
+function setLocalStorage() {
+  localStorage.setItem('lang', lang);
+  localStorage.setItem('theme', theme);
+}
+window.addEventListener('beforeunload', setLocalStorage);
