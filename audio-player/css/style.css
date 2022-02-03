@@ -113,6 +113,15 @@ button {
 .control-switcher {
   width: 60px;
   height: 60px;
+  background-size: contain;
+}
+
+.control-switcher-play {
+  background-image: url(../assets/svg/play.png);
+}
+
+.control-switcher-pause {
+  background-image: url(../assets/svg/pause.png);
 }
 
 .control-previous,
