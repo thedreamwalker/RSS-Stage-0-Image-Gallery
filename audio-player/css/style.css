@@ -107,7 +107,7 @@ button {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-bottom: 25px;
+  padding-bottom: 15px;
 }
 
 .control-switcher {
@@ -138,14 +138,28 @@ button {
 
 .player-progress {
   width: 80%;
-  height: 3px;
-  margin: 0 auto;
+  height: 4px;
+  margin: 2px auto 5px;
   background-color: var(--shadow-basic-color);
+  cursor: pointer;
+}
+
+.player-track-duration,
+.player-current-time {
+  padding: 0px 32px 5px 32px;
+  color: var(--decorate-basic-color);
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.player-track-duration {
+  color: var(--text-basic-color);
+  text-align: right;
 }
 
 .player-progress-bar {
   position: relative;
-  width: 80%;
+  width: 0%;
   height: 3px;
   background-color: var(--decorate-basic-color);
 }
