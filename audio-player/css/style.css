@@ -114,6 +114,11 @@ button {
   width: 60px;
   height: 60px;
   background-size: contain;
+  transition: 0.25s;
+}
+
+.control-switcher:hover {
+  transform: scale(1.10);
 }
 
 .control-switcher-play {
@@ -128,6 +133,13 @@ button {
 .control-next {
   width: 40px;
   height: 40px;
+  transition: 0.25s;
+}
+
+.control-previous:hover,
+.control-next:hover, 
+.control-volume:hover img {
+  filter: invert(9%) sepia(0%) saturate(636%) hue-rotate(140deg) brightness(96%) contrast(92%);
 }
 
 .control-switcher img,
@@ -147,8 +159,20 @@ button {
   padding-top: 3px;
 }
 
+.control-shuffle:hover {
+  filter: invert(9%) sepia(0%) saturate(636%) hue-rotate(140deg) brightness(96%) contrast(92%);
+}
+
+.control-shuffle.is-active:hover {
+  filter: invert(31%) sepia(99%) saturate(324%) hue-rotate(26deg) brightness(104%) contrast(96%);
+}
+
 .control-volume {
   position: relative;
+}
+
+.control-volume:hover img {
+  transition: 0.25s;
 }
 
 .volume-progress {
@@ -219,6 +243,14 @@ button {
   list-style: none;
   justify-content: space-around;
   align-items: center;
+}
+
+.player-author-list img {
+  transition: 0.25s;
+}
+
+.player-author-list img:hover {
+  transform: scale(1.10);
 }
 
 .player-author-text {
