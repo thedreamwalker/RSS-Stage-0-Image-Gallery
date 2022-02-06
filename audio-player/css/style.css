@@ -178,10 +178,10 @@ button {
 .volume-progress {
   position: absolute;
   display: flex;
-  width: 4px;
+  width: 8px;
   height: 0;
   top: -1px;
-  left: 40%;
+  left: 20%;
   
   background-color: var(--decorate-basic-color);
   cursor: pointer;
@@ -195,7 +195,7 @@ button {
 
 .volume-progress-bar {
   position: relative;
-  width: 4px;
+  width: 8px;
   height: 75%;
   background-color: var(--shadow-basic-color);
 }
