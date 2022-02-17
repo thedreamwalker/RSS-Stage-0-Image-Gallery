@@ -55,11 +55,15 @@ body {
   gap: 20px;
   width: 50%;
   height: 600px;
+  perspective: 1000px;
 }
 
 .memory-card {
   position: relative;
   cursor: pointer;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
 }
 
 .memory-card:active {
@@ -80,4 +84,9 @@ body {
   height: 100%;
   padding: 10%;
   background: #1C7CCC;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
 }
