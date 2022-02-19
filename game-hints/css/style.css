@@ -43,6 +43,10 @@ body {
   color: var(--text-basic-color);
 }
 
+.main {
+  position: relative;
+}
+
 .container {
   width: 1440px;
   margin: 0 auto;
@@ -89,4 +93,17 @@ body {
 
 .front-face {
   transform: rotateY(180deg);
+}
+
+.memory-result {
+  display: none;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 40%;
+  height: 500px;
+  background-color: var(--background-basic-color);
 }
