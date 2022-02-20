@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>portfolio</title>
+  <title>memory game</title>
   <link rel="icon" href="assets/img/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+  <div class="background"></div>
   <header class="header">
     <div class="container">
       </div>
@@ -20,22 +21,40 @@
   </header>
 
   <main class="main">
-    <p class="container">Ходов: <span class="number-move">0</span></p>
+    <p class="container moves">Moves: <span class="number-move">0</span></p>
     <section class="container memory-field">
         
     </section>
     <section class="container memory-result">
-      <p>Ура, победа!</p>
-      <p>На игру было затрачено <span class="number-move"></span> ходов</p>
-      <p>Таблица рекордов</p>
+      <p class="memory-result-congratulations"></p>
+      <p class="memory-result-moves">It has taken <span class="number-move"></span> moves</p>
+      <p class="memory-result-last">Last games</p>
       <div class="memory-result-table">
         
+      </div>
+      <div class="memory-result-new-game">
+        <div>
+          <input type="radio" id="regular" name="startgame" value="regular" checked>
+          <label for="regular">Regular</label>
+        </div>
+        <div>
+          <input type="radio" id="big" name="startgame" value="big">
+          <label for="big">Big</label>
+        </div>
+        <button class="start-game">Start game</button>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
+      <div class="memory-footer">
+        <ul class="memory-footer-list">
+          <li><a href="https://github.com/thedreamwalker/"><img src="./assets/svg/github-brands.svg" width="40" height="40" alt="link github"></a></li>
+          <li class="memory-footer-text">© 2022</li>
+          <li><a href="https://rs.school/js/"><img src="./assets/svg/rs_school_js-red.svg" width="130" height="50" alt="link rs school"></a></li>
+      </ul>
+       </div>
     </div>
   </footer>
   
