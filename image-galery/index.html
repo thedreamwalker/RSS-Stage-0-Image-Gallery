@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>image-gallery</title>
+  <link rel="icon" href="assets/img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="header start-page">
+    <div class="gallery-container">
+      <nav class="gallery-nav">
+        <div class="gallery-logo">
+          <a href="./"><img class="gallery-logo-img" src="./assets/svg/logo-black.svg" alt="логотип Unsplash"></a>
+          <p class="gallery-logo-text">Unsplash API</p>
+        </div>
+        <form class="gallery-search">
+          <input class="gallery-input" type="search" placeholder="write a word" autofocus autocomplete="off">
+          <button class="gallery-search-button" type="submit">Search</button>
+        </form>
+        <button class="button-random">Random</button>
+      </nav>
+    </div>
+
+  </header>
+  <main>
+    <div class="gallery-container">
+    <section class="gallery-images start-gallery">
+
+    </section>
+  </div>
+  </main>
+  <footer class="footer">
+    <div class="gallery-footer">
+      <ul class="gallery-footer-list">
+        <li><a href="https://github.com/thedreamwalker/"><img src="./assets/svg/github-brands.svg" width="40" height="40" alt="link github"></a></li>
+        <li class="gallery-footer-text">© 2022</li>
+        <li><a href="https://rs.school/js/"><img src="./assets/svg/rs_school_js.svg" width="80" height="60" alt="link rs school"></a></li>
+    </ul>
+     </div>
+  </footer>
+  <script src="./index.js"></script>
+</body>
+</html>
